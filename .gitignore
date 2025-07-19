@@ -1,0 +1,4 @@
+*.sock
+/workspace/.config/code-server/*
+/workspace/.ollama/*
+*.log

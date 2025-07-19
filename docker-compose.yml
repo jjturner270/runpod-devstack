@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  runpod-devstack:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: runpod-devstack
+    ports:
+      - "7860:7860"
+      - "3000:3000"
+      - "8080:8080"
+      - "5432:5432"
+    volumes:
+      - ./workspace:/workspace
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    restart: unless-stopped
